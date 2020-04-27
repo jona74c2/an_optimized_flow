@@ -3,69 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.scss" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <meta name="robots" content="noindex" />
     <script src="https://kea-alt-del.dk/dxc/login.js"></script>
   </head>
   <body>
+    <h2>Tilmeld dig og læs hele artiklen</h2>
     <form>
-      <label for="name">Name</label>
-      <input type="text" id="name" />
-      <label for="mail">Work email</label>
-      <input type="email" id="mail" />
-      <label for="company">Company</label>
-      <input type="text" id="company" />
-      <label for="job">Job title</label>
-      <input type="text" id="job" />
-      <input type="checkbox" id="consent" />
-      <label for="consent">I agree</label>
-      <input type="submit" value="Submit" />
+      <label for="name">Navn</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="John Doe"
+        required
+      />
+      <label for="mail">Arbejdsmail</label>
+      <input
+        type="email"
+        id="mail"
+        name="email"
+        placeholder="john@dxc.com"
+        required
+      />
+      <label for="company">Virksomhedsnavn</label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        placeholder="DXC Technologies"
+        required
+      />
+      <label for="job">Job titel</label>
+      <input
+        type="text"
+        id="job"
+        name="job"
+        placeholder="Chefkonsulent"
+        required
+      />
+      <input type="checkbox" id="consent" required />
+      <label for="consent"
+        >Ja tak, jeg vil gerne modtage nyhedsbrev og personlig markedsføring.
+        Jeg kan til enhver tid melde fra.</label
+      >
+      <input type="submit" value="Tilmeld og læs hele artiklen" />
     </form>
-    <script>
-      window.addEventListener("DOMContentLoaded", start);
-      const user = {
-        name: "Test person",
-        email: "newtest@email.com",
-        company: "testcorp",
-        job: "QA tester",
-        country: "",
-        visits: "",
-      };
-      function start() {
-        post(user);
-      }
-
-      async function getJsonData() {
-        const response = await fetch(
-          "https://keaassignment-e242.restdb.io/rest/dxc-users",
-          {
-            method: "get",
-            headers: {
-              "Content-Type": "application/json; charset=utf-8",
-              "x-apikey": "5ea209a6919b360ce59b7c7b",
-              "cache-control": "no-cache",
-            },
-          }
-        );
-        jsonData = await response.json();
-      }
-
-      async function post(data) {
-        const postData = JSON.stringify(data);
-        const response = await fetch(
-          "https://keaassignment-e242.restdb.io/rest/dxc-users",
-          {
-            method: "post",
-            headers: {
-              "Content-Type": "application/json; charset=utf-8",
-              "x-apikey": "5ea209a6919b360ce59b7c7b",
-              "cache-control": "no-cache",
-            },
-            body: postData,
-          }
-        );
-        console.log(await response.json());
-      }
-    </script>
+    <script src="form.js"></script>
   </body>
 </html>
