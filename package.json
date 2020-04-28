@@ -4,7 +4,7 @@
   "description": "Project for DXC Technologies",
   "main": "index.js",
   "scripts": {
-    "start": "parcel *.html --open",
+    "start": "parcel index.html --open",
     "build": "parcel build *.html --public-url ./"
   },
   "keywords": [],

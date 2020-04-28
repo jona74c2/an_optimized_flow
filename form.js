@@ -56,6 +56,7 @@ async function post(data) {
     body: postData,
   });
   console.log(await response.json());
+  window.location.reload(false);
 }
 
 async function deleteIt(id) {

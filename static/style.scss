@@ -1,0 +1,106 @@
+$font: "GT-Walsheim-Pro", normal;
+$fontBold: "GT-Walsheim-Pro", bold;
+
+* {
+  margin: 0 auto;
+}
+@font-face {
+  font-family: "GT-Walsheim-Pro";
+  src: url("/static/GT-Walsheim-Pro-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "GT-Walsheim-Pro";
+  src: url("/static/GT-Walsheim-Pro-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+p,
+h1,
+h2,
+h3 {
+  font-family: $font;
+}
+
+#splashvid {
+  width: 100vw;
+  height: 178vw;
+  border: none;
+}
+#splashtext {
+  position: absolute;
+  width: 100vw;
+  height: 178vw;
+  top: 0px;
+  text-align: center;
+  color: white;
+}
+
+#signupform {
+  background-color: black;
+}
+
+#formHeader {
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+
+  .fas fa-check {
+  }
+}
+
+label {
+  cursor: pointer;
+  font-family: $font;
+  font-size: 18px;
+  line-height: 21px;
+  color: white;
+}
+
+input {
+  height: 30px;
+  margin-bottom: 12px;
+  font-family: $font;
+  color: black;
+  padding: 0px 4px 0px 4px;
+}
+input:focus {
+  border: 2px solid #ffed00;
+}
+
+input:valid {
+  border: 2px solid #00cc1b;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border: 2px solid #cc000a;
+}
+
+input[type="submit"] {
+  background: #ffed00;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  height: 34px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+::placeholder {
+  color: #777777;
+  font-family: $font;
+  font-size: 14px;
+  line-height: 16px;
+}
+input:focus::placeholder {
+  color: transparent;
+}
