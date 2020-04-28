@@ -1,9 +1,11 @@
 $font: "GT-Walsheim-Pro", normal;
 $fontBold: "GT-Walsheim-Pro", bold;
+$transitionTime: 0.4s;
 
 * {
   margin: 0 auto;
 }
+
 @font-face {
   font-family: "GT-Walsheim-Pro";
   src: url("/static/GT-Walsheim-Pro-Regular.woff2") format("woff2");
@@ -14,6 +16,10 @@ $fontBold: "GT-Walsheim-Pro", bold;
   font-family: "GT-Walsheim-Pro";
   src: url("/static/GT-Walsheim-Pro-Bold.woff2") format("woff2");
   font-weight: bold;
+}
+
+body {
+  background-color: black;
 }
 
 p,
@@ -32,53 +38,86 @@ h3 {
   position: absolute;
   width: 100vw;
   height: 178vw;
-  top: 0px;
+  top: 40%;
   text-align: center;
   color: white;
+
+  p {
+    margin: 20px;
+    font-family: $fontBold;
+  }
+  h1 {
+    font-size: 2rem;
+    font-family: $fontBold;
+  }
 }
 
 #signupform {
   background-color: black;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 #formHeader {
   color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 325px;
-
-  .fas fa-check {
-  }
+  width: 75%;
 }
 
 label {
   cursor: pointer;
   font-family: $font;
-  font-size: 18px;
+  text-align: left;
+  font-size: 1rem;
   line-height: 21px;
   color: white;
+  width: 100%;
 }
 
 input {
+  width: 100%;
   height: 30px;
-  margin-bottom: 12px;
   font-family: $font;
   color: black;
   padding: 0px 4px 0px 4px;
 }
+
+.input-container {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .fas {
+    width: 100%;
+    height: 16px;
+    margin-bottom: -16px;
+    position: relative;
+    bottom: 24px;
+    left: 95%;
+    opacity: 0;
+    transition: $transitionTime;
+  }
+  input:valid ~ .fa-check {
+    transition: $transitionTime;
+    opacity: 1;
+  }
+  input:invalid:not(:placeholder-shown) ~ .fa-times {
+    transition: $transitionTime;
+    opacity: 1;
+  }
+}
+
 input:focus {
-  border: 2px solid #ffed00;
-}
-
-input:valid {
-  border: 2px solid #00cc1b;
-}
-
-input:invalid:not(:placeholder-shown) {
-  border: 2px solid #cc000a;
+  transition: $transitionTime;
+  outline: 2px solid #ffed00;
 }
 
 input[type="submit"] {
@@ -88,11 +127,20 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 16px;
   height: 34px;
+  margin-top: 20px;
 }
-
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+.checkboxField {
+  display: flex;
+  p {
+    color: white;
+    font-size: 0.7rem;
+    padding-left: 4px;
+  }
+  #consent {
+    width: 15%;
+    height: 16px;
+    margin-bottom: 0px;
+  }
 }
 
 ::placeholder {
@@ -103,4 +151,13 @@ input[type="checkbox"] {
 }
 input:focus::placeholder {
   color: transparent;
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 1000px) {
+  input[type="submit"] {
+    width: 30%;
+  }
 }

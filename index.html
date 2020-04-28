@@ -6,7 +6,6 @@
     <meta name="robots" content="noindex" />
     <script src="https://kea-alt-del.dk/dxc/login.js"></script>
     <script src="https://kit.fontawesome.com/c0ab951e8e.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="/static/style.scss" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
@@ -20,7 +19,7 @@
     <section id="splash">
       <iframe
         id="splashvid"
-        src="/static/video-dxcmobile.mp4"
+        src="/static/video-dxcmobile.mp4?autoplay=1&loop=1"
         allow="autoplay"
       ></iframe>
       <div id="splashtext">
@@ -32,47 +31,66 @@
       </div>
     </section>
     <section id="signupform">
-      <h2 id="formHeader">Tilmeld dig og læs hele artiklen</h2>
+      <h2 id="formHeader">Tilmeld dig for at læse hele artiklen</h2>
       <form>
-        <label for="name">Navn</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="John Doe"
-          required
-        />
-        <i class="fas fa-check"></i>
-        <label for="mail">Arbejdsmail</label>
-        <input
-          type="email"
-          id="mail"
-          name="email"
-          placeholder="john@dxc.com"
-          required
-        />
-        <label for="company">Virksomhedsnavn</label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          placeholder="DXC Technologies"
-          required
-        />
-        <label for="job">Job titel</label>
-        <input
-          type="text"
-          id="job"
-          name="job"
-          placeholder="Chefkonsulent"
-          required
-        />
-        <input type="checkbox" id="consent" required />
-        <label for="consent"
-          >Ja tak, jeg vil gerne modtage nyhedsbrev og personlig markedsføring.
-          Jeg kan til enhver tid melde fra.</label
-        >
-        <input type="submit" value="Tilmeld og læs hele artiklen" />
+        <div class="input-container">
+          <label for="name">Navn</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John Doe"
+            required
+          />
+          <i class="fas fa-check"></i>
+          <i class="fas fa-times"></i>
+        </div>
+
+        <div class="input-container">
+          <label for="mail">Arbejdsmail</label>
+          <input
+            type="email"
+            id="mail"
+            name="email"
+            placeholder="john@dxc.com"
+            required
+          />  
+          <i class="fas fa-check"></i>
+          <i class="fas fa-times"></i>
+        </div>
+
+        <div class="input-container">
+          <label for="company">Virksomhedsnavn</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="DXC Technologies"
+            required
+          />
+          <i class="fas fa-check"></i>
+          <i class="fas fa-times"></i>
+        </div>
+
+        <div class="input-container">
+          <label for="job">Job titel</label>
+          <input
+            type="text"
+            id="job"
+            name="job"
+            placeholder="Chefkonsulent"
+            required
+          />
+          <i class="fas fa-check"></i>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="checkboxField">
+          <input type="checkbox" id="consent" required />
+
+          <p>Ja tak, jeg vil gerne modtage nyhedsbrev og personlig markedsføring.
+            Jeg kan til enhver tid melde fra. <span style="color:#ffed00">Læs mere</span></p>
+        </div>
+        <input type="submit" value="Tilmeld" />
       </form>
     </section>
 
