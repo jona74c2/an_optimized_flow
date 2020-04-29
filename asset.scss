@@ -149,6 +149,33 @@ body {
   color: white;
   margin-right: calc(-5vw + 1px);
   margin-left: calc(-5vw + 1px);
+
+  ul {
+    margin-top: 100px;
+    border-top: 2px solid #ffed00;
+  }
+
+  li {
+    padding-top: 20px;
+  }
+
+  #page2_bottom_dshape {
+    background-image: url(img/d_shapewhite_mirror.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    padding-top: 140px;
+    padding-left: calc(5vw + 1px);
+    margin-left: calc(-5vw + 1px);
+    margin-right: calc(-5vw + 1px);
+    padding-right: calc(5vw - 1px);
+    margin-top: 50px;
+    padding-bottom: 100px;
+    max-width: 350px;
+    line-height: 1.6;
+    font-size: 24px;
+    float: left;
+  }
 }
 
 .margin_5 {
