@@ -2,9 +2,16 @@
 window.addEventListener("DOMContentLoaded", start);
 
 const videoSource = {
-  mobile: "/static/dxcmobile.mp4?autoplay=1&loop=1",
-  square: "/static/dxcsquare.mp4?autoplay=1&loop=1",
-  desktop: "/static/dxcdesktop.mp4?autoplay=1&loop=1",
+  mobile: "static/dxcmobile.mp4",
+  square: "static/dxcsquare.mp4",
+  desktop: "static/dxcdesktop.mp4",
 };
 
-function start() {}
+function start() {
+  let video = document.querySelector("#splashvid source");
+  if (window.screen.width > 900) {
+    video.src = videoSource.desktop;
+  } else {
+    video.src = videoSource.mobile;
+  }
+}

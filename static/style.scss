@@ -5,7 +5,8 @@ $highlightColor: #ffed00;
 $placeholderColor: #777777;
 
 * {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
@@ -20,6 +21,10 @@ $placeholderColor: #777777;
   font-weight: bold;
 }
 
+img {
+  width: 100%;
+}
+
 body {
   background-color: black;
 }
@@ -31,6 +36,7 @@ nav {
 
 .logo {
   height: 5vh;
+  width: auto;
 }
 
 .logo:hover {
@@ -38,6 +44,7 @@ nav {
 }
 
 p,
+li,
 h1,
 h2,
 h3 {
@@ -60,11 +67,25 @@ h3 {
   p {
     margin: 20px;
     font-family: $fontBold;
+    font-size: 1.1rem;
   }
   h1 {
     font-size: 2rem;
     font-family: $fontBold;
   }
+  .triangle {
+    position: relative;
+    right: 32%;
+  }
+  .textlogo {
+    width: 36px;
+  }
+}
+
+.splashTriangle {
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 25px);
 }
 
 #signupform {
@@ -77,6 +98,8 @@ h3 {
   color: white;
   margin-bottom: 20px;
   text-align: left;
+  border-bottom: 2px solid #ffed00;
+  padding-bottom: 8px;
   h2 {
     font-size: 1.1rem;
   }
@@ -85,7 +108,7 @@ h3 {
 form {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  padding: 20px 20px 20px 20px;
 }
 
 label {
@@ -172,10 +195,7 @@ input:focus::placeholder {
   color: transparent;
 }
 
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 900px) {
   #splashtext {
     top: 30%;
     width: 50%;
@@ -183,22 +203,34 @@ input:focus::placeholder {
       font-size: 3.2rem;
     }
   }
+  .splashTriangle {
+    top: 90%;
+  }
 
   #signupform {
+    /*background-image: url(img/d_shapeblack.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 150%;
+    background-position: 0% 50%; */
+    border-radius: 50% 0% 0% 50%;
     position: absolute;
     top: 6vh;
     right: 0px;
     height: 94vh;
     width: 30vw;
+    padding-left: 80px;
     transition: $transitionTime;
   }
   form {
     width: 25vw;
     margin-top: 10vh;
+    padding: 20px 20px 20px 40px;
   }
   #signupform:hover {
-    transition: $transitionTime;
+    transition: $transitionTime ease-out;
     width: 40vw;
+    border-radius: 0% 0% 0% 0%;
   }
   #signupform:focus-within {
     transition: $transitionTime;
