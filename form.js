@@ -21,6 +21,11 @@ const user = {
 function start() {
   HTML.form = document.querySelector("form");
   HTML.form.addEventListener("submit", submitFormData);
+  HTML.video = document.querySelector("#splashvid");
+  console.log(HTML.video.offsetHeight * 1.132);
+  let root = document.documentElement;
+  root.style.setProperty("--video-height", HTML.video.offsetHeight * 1.132 + "px");
+  console.log(root.style.getPropertyValue("--video-height"));
   /* getJsonData(); */
 }
 
@@ -62,8 +67,13 @@ async function post(data) {
   console.log(await response.json());
   doneSymbol.style.opacity = 1;
   loadSymbol.style.opacity = 0;
-
+  setTimeout(removeForm, 500);
   setTimeout(scrollIntoView, 700);
+}
+
+function removeForm() {
+  const formSection = document.querySelector("#signupform");
+  formSection.style.display = "none";
 }
 
 function scrollIntoView() {

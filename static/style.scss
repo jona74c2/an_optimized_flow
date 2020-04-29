@@ -1,3 +1,7 @@
+:root {
+  --video-height: 0px;
+}
+
 $font: "GT-Walsheim-Pro", normal;
 $fontBold: "GT-Walsheim-Pro", bold;
 $transitionTime: 0.3s;
@@ -60,7 +64,8 @@ h3 {
   position: absolute;
   width: 100%;
   height: 60vh;
-  top: 40vh;
+  top: 0%;
+  transform: translateY(50%);
   text-align: center;
   color: white;
 
@@ -75,7 +80,7 @@ h3 {
   }
   .triangle {
     position: relative;
-    right: 32%;
+    margin-right: 50%;
   }
   .textlogo {
     width: 36px;
@@ -233,17 +238,20 @@ input:focus::placeholder {
     background-position: 0% 50%; */
     border-radius: 50% 0% 0% 50%;
     position: absolute;
-    top: 6vh;
+    top: 69px;
     right: 0px;
-    height: 94vh;
+    height: var(--video-height);
+    /* height: 94vh; */
     width: 30vw;
     padding-left: 80px;
     transition: $transitionTime;
   }
   form {
+    position: absolute;
     width: 25vw;
-    margin-top: 10vh;
     padding: 20px 20px 20px 40px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   #signupform:hover {
     transition: $transitionTime ease-out;

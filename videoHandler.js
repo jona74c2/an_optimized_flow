@@ -10,7 +10,8 @@ const videoSource = {
 function start() {
   let video = document.querySelector("#splashvid source");
   let videocontainer = document.querySelector("#splashvid");
-  if (window.screen.width > 900) {
+  console.log(window.innerWidth);
+  if (window.innerWidth > 900) {
     video.src = videoSource.desktop;
     videocontainer.load();
     videocontainer.play();
