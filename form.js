@@ -22,10 +22,8 @@ function start() {
   HTML.form = document.querySelector("form");
   HTML.form.addEventListener("submit", submitFormData);
   HTML.video = document.querySelector("#splashvid");
-  console.log(HTML.video.offsetHeight * 1.132);
   let root = document.documentElement;
   root.style.setProperty("--video-height", HTML.video.offsetHeight * 1.132 + "px");
-  console.log(root.style.getPropertyValue("--video-height"));
   /* getJsonData(); */
 }
 
