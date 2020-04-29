@@ -156,6 +156,24 @@ input {
   }
 }
 
+.submit-container {
+  .fas {
+    opacity: 0;
+    transition: $transitionTime;
+    margin-left: 10px;
+  }
+  .fa-check {
+    margin-right: -38px;
+  }
+  .fa-spinner {
+    animation: spin 1.5s infinite linear;
+  }
+  input:valid ~ .fa-spinner {
+    transition: $transitionTime;
+    opacity: 1;
+  }
+}
+
 input:focus {
   transition: $transitionTime;
   outline: 2px solid $highlightColor;
@@ -239,5 +257,23 @@ input:focus::placeholder {
 
   input[type="submit"] {
     width: 30%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

@@ -6,6 +6,9 @@ let jsonData = [];
 const settings = settingsObject();
 let HTML = {};
 
+const loadSymbol = document.querySelector(".submit-container .fa-spinner");
+const doneSymbol = document.querySelector(".submit-container .fa-check");
+
 const user = {
   name: "",
   email: "",
@@ -23,6 +26,7 @@ function start() {
 
 function submitFormData() {
   event.preventDefault();
+  loadSymbol.style.opacity = 1;
   const elements = HTML.form.elements;
   user.name = elements.name.value;
   user.email = elements.email.value;
@@ -56,6 +60,8 @@ async function post(data) {
     body: postData,
   });
   console.log(await response.json());
+  doneSymbol.style.opacity = 1;
+  loadSymbol.style.opacity = 0;
 }
 
 async function deleteIt(id) {
