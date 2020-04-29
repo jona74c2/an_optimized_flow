@@ -62,6 +62,10 @@ async function post(data) {
   console.log(await response.json());
   doneSymbol.style.opacity = 1;
   loadSymbol.style.opacity = 0;
+  const asset1 = document.querySelector("#asset_page1");
+  const asset2 = document.querySelector("#asset_page2");
+  asset1.style.display = "block";
+  asset2.style.display = "block";
 }
 
 async function deleteIt(id) {
