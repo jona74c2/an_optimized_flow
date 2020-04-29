@@ -1,6 +1,8 @@
 $font: "GT-Walsheim-Pro", normal;
 $fontBold: "GT-Walsheim-Pro", bold;
-$transitionTime: 0.4s;
+$transitionTime: 0.3s;
+$highlightColor: #ffed00;
+$placeholderColor: #777777;
 
 * {
   margin: 0 auto;
@@ -22,6 +24,19 @@ body {
   background-color: black;
 }
 
+nav {
+  background-color: white;
+  padding: 10px;
+}
+
+.logo {
+  height: 5vh;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
 p,
 h1,
 h2,
@@ -30,15 +45,15 @@ h3 {
 }
 
 #splashvid {
-  width: 100vw;
-  height: 178vw;
+  width: 100%;
+  height: 100%;
   border: none;
 }
 #splashtext {
   position: absolute;
-  width: 100vw;
-  height: 178vw;
-  top: 40%;
+  width: 100%;
+  height: 60vh;
+  top: 40vh;
   text-align: center;
   color: white;
 
@@ -60,9 +75,11 @@ h3 {
 
 #formHeader {
   color: white;
-  text-align: center;
-  font-size: 1.1rem;
   margin-bottom: 20px;
+  text-align: left;
+  h2 {
+    font-size: 1.1rem;
+  }
 }
 
 form {
@@ -86,7 +103,7 @@ input {
   height: 30px;
   font-family: $font;
   color: black;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 0px 0px 6px;
 }
 
 .input-container {
@@ -94,6 +111,7 @@ input {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   .fas {
     width: 100%;
@@ -101,7 +119,7 @@ input {
     margin-bottom: -16px;
     position: relative;
     bottom: 24px;
-    left: 95%;
+    left: 93%;
     opacity: 0;
     transition: $transitionTime;
   }
@@ -117,11 +135,11 @@ input {
 
 input:focus {
   transition: $transitionTime;
-  outline: 2px solid #ffed00;
+  outline: 2px solid $highlightColor;
 }
 
 input[type="submit"] {
-  background: #ffed00;
+  background: $highlightColor;
   color: black;
   border: none;
   cursor: pointer;
@@ -129,22 +147,23 @@ input[type="submit"] {
   height: 34px;
   margin-top: 20px;
 }
+
 .checkboxField {
   display: flex;
-  p {
-    color: white;
-    font-size: 0.7rem;
-    padding-left: 4px;
+  label {
+    font-size: 0.8rem;
+    padding-left: 10px;
   }
-  #consent {
-    width: 15%;
+  input[type="checkbox"] {
+    width: 16px;
     height: 16px;
     margin-bottom: 0px;
+    margin-top: 4px;
   }
 }
 
 ::placeholder {
-  color: #777777;
+  color: $placeholderColor;
   font-family: $font;
   font-size: 14px;
   line-height: 16px;
@@ -157,6 +176,35 @@ input:focus::placeholder {
 }
 
 @media only screen and (min-width: 1000px) {
+  #splashtext {
+    top: 30%;
+    width: 50%;
+    h1 {
+      font-size: 3.2rem;
+    }
+  }
+
+  #signupform {
+    position: absolute;
+    top: 6vh;
+    right: 0px;
+    height: 94vh;
+    width: 30vw;
+    transition: $transitionTime;
+  }
+  form {
+    width: 25vw;
+    margin-top: 10vh;
+  }
+  #signupform:hover {
+    transition: $transitionTime;
+    width: 40vw;
+  }
+  #signupform:focus-within {
+    transition: $transitionTime;
+    width: 40vw;
+  }
+
   input[type="submit"] {
     width: 30%;
   }

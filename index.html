@@ -16,23 +16,33 @@
     <script src="https://kea-alt-del.dk/dxc/login.js"></script>
   </head>
   <body>
+    <nav>
+      <a href="index.html"><img src="static/dxc_logo.png" class="logo"></a>
+
+    </nav>
     <section id="splash">
-      <iframe
+      <video id="splashvid" poster="" xf autoplay loop muted playsinline controlslist="nodownload" crossorigin="anonymous" preload="auto">
+        <source src="static/dxcmobile.mp4" type="video/mp4">
+      <!--<iframe
         id="splashvid"
-        src="/static/video-dxcmobile.mp4?autoplay=1&loop=1"
+        src="/static/dxcmobile.mp4?autoplay=1&loop=1"
         allow="autoplay"
-      ></iframe>
+      ></iframe>  -->
+      </video>
       <div id="splashtext">
         <h1>Skab succes gennem outsourcing</h1>
-        <p>24% af virksomhedsledere outsourcer software udvikling</p>
+        <p>24% af virksomhedsledere outsourcer </br>software udvikling</p>
         <p>
           Undgå Ineffektivitet, </br>Hyppige systemnedbrud og</br> Utilfredse it-brugere
         </p>
       </div>
     </section>
     <section id="signupform">
-      <h2 id="formHeader">Tilmeld dig for at læse hele artiklen</h2>
       <form>
+        <div id="formHeader">
+          <h2 >Tilmeld dig for at læse hele artiklen</h2>
+        </div>
+
         <div class="input-container">
           <label for="name">Navn</label>
           <input
@@ -87,8 +97,8 @@
         <div class="checkboxField">
           <input type="checkbox" id="consent" required />
 
-          <p>Ja tak, jeg vil gerne modtage nyhedsbrev og personlig markedsføring.
-            Jeg kan til enhver tid melde fra. <span style="color:#ffed00">Læs mere</span></p>
+          <label for="consent">Ja tak, jeg vil gerne modtage nyhedsbrev og personlig markedsføring.
+            Jeg kan til enhver tid melde fra. <span style="color:#ffed00">Læs mere</span></label>
         </div>
         <input type="submit" value="Tilmeld" />
       </form>
