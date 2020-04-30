@@ -2,9 +2,9 @@
 window.addEventListener("DOMContentLoaded", start);
 
 const videoSource = {
-  mobile: "/dxcmobile.mp4",
-  square: "/dxcsquare.mp4",
-  desktop: "/dxcdesktop.mp4",
+  mobile: "dxcmobile.mp4",
+  square: "dxcsquare.mp4",
+  desktop: "dxcdesktop.mp4",
 };
 
 function start() {

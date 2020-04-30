@@ -20,15 +20,43 @@ const user = {
 
 function start() {
   HTML.form = document.querySelector("form");
-  HTML.form.addEventListener("submit", submitFormData);
+  HTML.form.setAttribute("novalidate", true);
+  HTML.form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkValid();
+  });
   HTML.video = document.querySelector("#splashvid");
   let root = document.documentElement;
   root.style.setProperty("--video-height", HTML.video.offsetHeight * 1.132 + "px");
   /* getJsonData(); */
 }
 
+function checkValid() {
+  //element.classList.add("invalid");
+  const elements = HTML.form.querySelectorAll("input");
+  elements.forEach((element) => {
+    element.classList.remove("invalid");
+  });
+  document.querySelector(".checkboxField + p").classList.remove("invalidBox");
+
+  if (HTML.form.checkValidity()) {
+    console.log("submit");
+    submitFormData();
+  } else {
+    elements.forEach((element) => {
+      if (!element.checkValidity()) {
+        if (element.id === "consent") {
+          console.log("consent");
+          document.querySelector(".checkboxField + p").classList.add("invalidBox");
+        }
+        element.classList.add("invalid");
+      }
+    });
+  }
+}
+
 function submitFormData() {
-  event.preventDefault();
+  //event.preventDefault();
   loadSymbol.style.opacity = 1;
   const elements = HTML.form.elements;
   user.name = elements.name.value;

@@ -228,6 +228,24 @@ input:focus::placeholder {
   color: transparent;
 }
 
+.hidden {
+  display: none;
+}
+
+input.invalid + i + i + p {
+  display: block;
+  margin-top: 2px;
+  padding-top: 0;
+  color: white;
+}
+
+.invalidBox {
+  display: block;
+  margin-top: 2px;
+  padding-top: 0;
+  color: white;
+}
+
 @media only screen and (min-width: 900px) {
   #splashtext {
     width: 50%;
