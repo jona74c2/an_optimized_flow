@@ -63,8 +63,8 @@ h3 {
 #splashtext {
   position: absolute;
   width: 100%;
-  top: 60%;
-  transform: translateY(-100%);
+  top: calc(40vw + 100px);
+  transform: translateY(0%);
   text-align: center;
   color: white;
 
