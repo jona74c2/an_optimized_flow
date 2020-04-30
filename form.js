@@ -40,13 +40,11 @@ function checkValid() {
   document.querySelector(".checkboxField + p").classList.remove("invalidBox");
 
   if (HTML.form.checkValidity()) {
-    console.log("submit");
     submitFormData();
   } else {
     elements.forEach((element) => {
       if (!element.checkValidity()) {
         if (element.id === "consent") {
-          console.log("consent");
           document.querySelector(".checkboxField + p").classList.add("invalidBox");
         }
         element.classList.add("invalid");
@@ -93,6 +91,10 @@ async function post(data) {
   console.log(await response.json());
   doneSymbol.style.opacity = 1;
   loadSymbol.style.opacity = 0;
+  assetUnlocked();
+}
+
+function assetUnlocked() {
   setTimeout(removeForm, 500);
   setTimeout(scrollIntoView, 700);
 }
